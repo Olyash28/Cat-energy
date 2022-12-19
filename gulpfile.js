@@ -17,7 +17,7 @@ const styles = () => {
       autoprefixer()
     ]))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build"))
     .pipe(sync.stream());
 }
 
@@ -49,3 +49,7 @@ const watcher = () => {
 exports.default = gulp.series(
   styles, server, watcher
 );
+
+const build = gulp.series(styles);
+
+exports.build = build;
