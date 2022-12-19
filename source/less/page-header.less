@@ -1,0 +1,36 @@
+.page-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: @white;
+
+  @media (min-width: @tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (min-width: @desktop) {
+    padding-left: 110px;
+    padding-right: 110px;
+    background-color: transparent;
+  }
+}
+
+.page-header__wrapper {
+  padding-top: 10px;
+  padding-bottom: 17px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  @media (max-width: @mobile-width-only) {
+    border-bottom: 2px solid @grey-bottom;
+  }
+
+  @media (min-width: @tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

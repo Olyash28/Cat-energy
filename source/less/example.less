@@ -1,0 +1,195 @@
+.example {
+  background-color: @grey-bg;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 27px;
+  padding-bottom: 25px;
+
+  @media (min-width: @tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 43px;
+    padding-bottom: 64px;
+    background: linear-gradient(@white 65%, @grey-bg 65%);
+  }
+
+  @media (min-width: @desktop) {
+    padding-left: 110px;
+    padding-right: 110px;
+    background: linear-gradient(@white 30%, @grey-bg 30%);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 134px;
+  }
+}
+
+.example__content {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: @tablet) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: @desktop) {
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+}
+
+.example__title {
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 33px;
+
+  @media (min-width: @tablet) {
+    margin-bottom: 63px;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: @desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.example__text {
+  font-family: "Arial", sans-serif;
+  color: @grey-font;
+  margin-bottom: 25px;
+
+  @media (min-width: @tablet) {
+    margin-bottom: 54px;
+  }
+
+  @media (min-width: @desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.example__weight {
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  @media (min-width: @tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (min-width: @desktop) {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+
+.example__blocks {
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: @tablet) {
+    gap: 42px;
+  }
+
+  @media (min-width: @desktop) {
+    justify-content: start;
+  }
+}
+
+.example__block {
+  border: 1px solid @grey-bottom;
+  border-radius: 3px;
+  margin: 0;
+  transform: rotateX(180deg);
+  padding: 14px 20px;
+  min-width: 124px;
+}
+
+.example__block p {
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  transform: rotateX(180deg);
+}
+
+.example__legend {
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  transform: rotateX(180deg);
+  text-align: center;
+  padding: 0 10px;
+  color: @grey-font;
+}
+
+.example__legend br {
+  @media (min-width: @tablet) {
+    display: none;
+  }
+}
+
+.example__result {
+  text-transform: uppercase;
+  align-self: center;
+
+  @media (min-width: @tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  @media (min-width: @desktop) {
+    flex-direction: row;
+    align-self: stretch;
+    justify-content: start;
+    gap: 63px;
+  }
+}
+
+.example__photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+//СЛЕПИТЬ БЛИН ДВУХ КОТОВ
+
+.example__photo-wrapper {
+  position: relative;
+  width: 311px;
+  height: 240px;
+
+  @media (min-width: @tablet) {
+    width: 708px;
+    height: 538px;
+  }
+}
+
+.example__photo-cat {
+  position: absolute;
+  height: 240px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+
+  @media (min-width: @tablet) {
+    height: 536px;
+    object-fit: cover;
+    object-position: left;
+    width: 50%;
+    left: 0;
+  }
+
+  &--after {
+    z-index: -1;
+
+    @media (min-width: @tablet) {
+      z-index: 1;
+      object-position: right;
+      left: 50%;
+    }
+  }
+}

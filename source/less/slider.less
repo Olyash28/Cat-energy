@@ -1,0 +1,47 @@
+.slider {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  @media (min-width: @tablet) {
+    gap: 14px;
+  }
+
+  @media (min-width: @desktop) {
+    gap: 24px;
+  }
+}
+
+.slider__text {
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  @media (min-width: @tablet) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.slider__wrapper {
+  min-width: 84px;
+  height: 14px;
+
+  @media (min-width: @tablet) {
+    min-width: 428px;
+    height: 34px;
+  }
+}
+
+input[type="range"] {
+  appearance: none;
+
+  @media (max-width: @mobile-width-only) {
+    border-radius: 30px;
+  }
+
+  @media (min-width: @tablet) {
+    width: 100%;
+    height: 2px;
+  }
+}

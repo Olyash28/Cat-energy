@@ -1,0 +1,48 @@
+.page-footer {
+  background-color: @grey-bg;
+  position: relative;
+}
+
+.page-footer__contacts {
+  background-color: @white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 28px;
+
+  @media (min-width: @tablet) {
+    padding: 71px 60px;
+  }
+
+  @media (min-width: @desktop) {
+    padding: 50px 76px;
+    position: absolute;
+    left: 110px;
+    top: 15%;
+    gap: 85px;
+  }
+
+  &--bg-grey {
+    background-color: @grey-bg;
+
+    @media (min-width: @desktop) {
+      background-color: @white;
+    }
+  }
+}
+
+.page-footer__invite {
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.page-footer__address {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: @grey-font;
+
+  @media (min-width: @tablet) {
+    text-align: right;
+  }
+}
