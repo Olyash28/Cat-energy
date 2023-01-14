@@ -13,8 +13,6 @@ import csso from 'gulp-csso';  //минимизирует css
 import rename from 'gulp-rename';  //переименовывает css в min.css
 import imagemin from 'gulp-imagemin';
 
-//сделать copy для html и fonts, favicon. что-то решить с min-css
-
 const sync = broswerSync.create();
 
 //img
@@ -77,6 +75,12 @@ const favicons = () => {
     .pipe(gulp.dest("build/favicon"))
 }
 
+const html = () => {
+  return gulp.src("source/**/*.html")
+    .pipe(gulp.dest("build"))
+};
+
+
 // Server
 
 const server = (done) => {
@@ -98,11 +102,6 @@ const watcher = () => {
   gulp.watch(["source/js/**/*.js", "!source/js/**/*.min.js"], gulp.series(cleanJs, scripts, sync.reload));
   gulp.watch("source/*.html").on("change",  sync.reload);
 }
-
-const html = () => {
-  return gulp.src("source/**/*.html")
-    .pipe(gulp.dest("build"))
-};
 
 const build = gulp.series(cleanFunc, images, gulp.parallel(styles, scripts, favicons, fonts, html));
 
