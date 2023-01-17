@@ -1,3 +1,5 @@
+@import 'globalStyles.less';
+
 @media (max-width: @mobile-width-only) {
   .main-nav {
     display: none;
@@ -48,12 +50,12 @@
 .main-nav__item {
   text-decoration: none;
 
-  &:not(&--current):hover {
-    opacity: 0.6;
-  }
-
   &:active {
     opacity: 0.3;
+  }
+
+  &:not(&--current):hover {
+    opacity: 0.6;
   }
 
   @media (max-width: @mobile-width-only) {
