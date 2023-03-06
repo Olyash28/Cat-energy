@@ -12,8 +12,16 @@ import clean from 'gulp-clean';
 import csso from 'gulp-csso';  //минимизирует css
 import rename from 'gulp-rename';  //переименовывает css в min.css
 import imagemin from 'gulp-imagemin';
+import {src, task} from 'gulp';
+import ghPages from 'gulp-gh-pages';
 
 const sync = broswerSync.create();
+
+// Deploy
+gulp.task('deploy', function () {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
+});
 
 //img
 
