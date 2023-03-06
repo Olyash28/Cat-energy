@@ -10,13 +10,13 @@
     padding-right: 30px;
     padding-top: 43px;
     padding-bottom: 64px;
-    background: linear-gradient(@white 65%, @grey-bg 65%);
+    background: linear-gradient(#ffffff 60%, #f2f2f2 70%);
   }
 
   @media (min-width: @desktop) {
     padding-left: 110px;
     padding-right: 110px;
-    background: linear-gradient(@white 30%, @grey-bg 30%);
+    background: linear-gradient(#ffffff 40%, #f2f2f2 60%);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -148,17 +148,19 @@
   }
 }
 
+//СЛЕПИТЬ ДВУХ КОТОВ
+
 .example__photo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-//СЛЕПИТЬ БЛИН ДВУХ КОТОВ
 
 .example__photo-wrapper {
   position: relative;
-  width: 311px;
+  overflow: hidden;
+  width: 320px;
   height: 240px;
 
   @media (min-width: @tablet) {
@@ -167,29 +169,53 @@
   }
 }
 
-.example__photo-cat {
+/*обертка для каждой фотки*/
+
+.example__photo-box {
+  width: 100%;
   position: absolute;
   height: 240px;
   top: 0;
   left: 0;
-  object-fit: cover;
-  width: 100%;
+  overflow: hidden;
+}
 
-  @media (min-width: @tablet) {
-    height: 536px;
-    object-fit: cover;
-    object-position: left;
-    width: 50%;
-    left: 0;
+@media (max-width: @mobile-width-only) {
+  .example__photo-box--before {
+    z-index: 2;
   }
 
-  &--after {
-    z-index: -1;
+  .example__photo-box--after {
+    z-index: 1;
+  }
+}
 
-    @media (min-width: @tablet) {
+@media (min-width: @tablet) {
+  .example__photo-box {
+    height: 536px;
+    left: 0;
+    z-index: 2;
+
+    &--after {
       z-index: 1;
-      object-position: right;
-      left: 50%;
     }
   }
 }
+
+/*сами фото*/
+
+.example__photo-cat {
+  object-fit: cover;
+  background-color: @grey-bg;
+  min-width: 320px;
+
+  @media (min-width: @tablet) {
+    min-width: 708px;
+    background: linear-gradient(#ffffff 40%, #f2f2f2 60%);
+  }
+
+  @media (min-width: @desktop) {
+    background: linear-gradient(#ffffff 40%, #f2f2f2 70%);
+  }
+}
+

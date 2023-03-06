@@ -3,9 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>Кэт энерджи</title>
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="less/advantages.less">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="page">
@@ -144,26 +150,33 @@
     </div>
     <div class="example__photo">
       <div class="example__photo-wrapper">
-        <picture>
-          <source media="(min-width: 1440px)" srcset="img/before-desktop@1x.png 1x, img/before-desktop@2x.png 2x" >
-          <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png 1x, img/before-tablet@2x.png 2x">
-          <img class="example__photo-cat example__photo-cat--before" src="img/before-mobile@1x.png" srcset="img/before-mobile@2x.png 2x"
-            alt="Толстый котик">
-        </picture>
-        <picture>
-          <source media="(min-width: 1440px)" srcset="img/after-desktop@1x.png 1x, img/after-desktop@2x.png 2x">
-          <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png 1x, img/after-tablet@2x.png 2x">
-          <img class="example__photo-cat example__photo-cat--after" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png"
-            alt="Худой котик">
-        </picture>
+        <div class="example__photo-box example__photo-box--before">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/before-desktop@1x.png 1x, img/before-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png 1x, img/before-tablet@2x.png 2x">
+            <img class="example__photo-cat example__photo-cat--before" src="img/before-mobile@1x.png"
+              srcset="img/before-mobile@2x.png 2x"
+              alt="Толстый котик">
+          </picture>
+        </div>
+        <div class="example__photo-box example__photo-box--after">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/after-desktop@1x.png 1x, img/after-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png 1x, img/after-tablet@2x.png 2x">
+            <img class="example__photo-cat example__photo-cat--after" src="img/after-mobile@1x.png"
+              srcset="img/after-mobile@2x.png"
+              alt="Худой котик">
+          </picture>
+        </div>
       </div>
       <div class="slider">
         <p class="slider__text">было</p>
         <div class="slider__wrapper">
-          <input type="range"></div>
+          <input class="slider__range" type="range" step="1" value="100"></div>
         <p class="slider__text">стало</p>
       </div>
     </div>
+
   </section>
 
 </main>
@@ -235,6 +248,7 @@
 
 </footer>
 
-<script src="js/menu.js"></script>
+<script src="js/main.min.js"></script>
+<script src="js/slider.js"></script>
 </body>
 </html>
