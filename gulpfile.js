@@ -20,7 +20,7 @@ const sync = broswerSync.create();
 const images = () => {
   return gulp.src('source/img/**/*.{jpg,png,svg}')
     .pipe(imagemin())
-    .pipe(gulp.dest("build/img")) //куда кладем
+    .pipe(gulp.dest("docs/img")) //куда кладем
 };
 
 // Scripts
@@ -36,12 +36,12 @@ const scripts = () => {
     .pipe(uglify())
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest("source/js"))
-    .pipe(gulp.dest("build/js"));
+    .pipe(gulp.dest("docs/js"));
 };
 
 const cleanFunc = () => {
   cleanJs();
-  return gulp.src('build', { read: false, allowEmpty: true })
+  return gulp.src('docs', { read: false, allowEmpty: true })
     .pipe(clean());
 };
 
@@ -58,26 +58,26 @@ const styles = () => {
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("docs/css"))
     .pipe(gulp.dest("source/css"))
     .pipe(sync.stream());
 };
 
-//копируем все в build
+//копируем все в docs
 
 const fonts = () => {
   return gulp.src("source/fonts/**/*.{woff,woff2}")
-    .pipe(gulp.dest("build/fonts"))
+    .pipe(gulp.dest("docs/fonts"))
 }
 
 const favicons = () => {
   return gulp.src("source/favicon/**/*")
-    .pipe(gulp.dest("build/favicon"))
+    .pipe(gulp.dest("docs/favicon"))
 }
 
 const html = () => {
   return gulp.src("source/**/*.html")
-    .pipe(gulp.dest("build"))
+    .pipe(gulp.dest("docs"))
 };
 
 
