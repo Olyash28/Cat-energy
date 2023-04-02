@@ -1,11 +1,8 @@
 .add-goods__title {
   padding-left: 20px;
-  //padding-right: 20px;
   margin-bottom: 36px;
   font-size: 24px;
   line-height: 24px;
-  //position: relative;
-  //overflow-x: hidden;
   display: flex;
   align-items: center;
   gap: 22px;
@@ -14,9 +11,6 @@
   &::after {
     content: "";
     display: block;
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
     width: 100%;
     height: 2px;
     background-color: @green-bg;
@@ -24,7 +18,6 @@
 
   @media (min-width: @tablet) {
     padding-left: 30px;
-    //padding-right: 30px;
     font-size: 36px;
     line-height: 36px;
     margin-bottom: 80px;
@@ -33,7 +26,6 @@
 
   @media (min-width: @desktop) {
     padding-left: 110px;
-    //padding-right: 110px;
   }
 }
 
@@ -41,8 +33,7 @@
   @media (min-width: @desktop) {
     padding: 0 110px;
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    column-gap: 80px;
+    grid-template-columns: auto auto;
     margin-bottom: 86px;
   }
 }
@@ -58,6 +49,7 @@
 
   @media (min-width: @desktop) {
     padding: 0;
+    margin-right: 80px;
   }
 }
 
@@ -94,8 +86,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-items: center;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 16px 0;
   }
 }
 
@@ -132,6 +123,7 @@
   align-content: center;
   background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   background-image: url("../img/gift-photo-mobile@1x.jpg");
 
   @media (min-resolution: 2dppx) {
